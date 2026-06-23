@@ -17,13 +17,13 @@ categories:
 
 ## 概要
 
-AI Agent の学習モデルで、Go 言語（golang 以下 go）のコーディング向けモデルを選定するため、[Sakana AI の Fugu](https://console.sakana.ai/models)（モデル ID: `fugu`）モデルを比較・評価した。
+AI Agent の学習モデルで、Go 言語（golang 以下 go）のコーディング向けモデルを選定するため、[Sakana AI の Fugu](https://console.sakana.ai/models) モデル（モデル ID: `fugu` 🐡）を比較・評価した。
 
-本調査は、別調査の「[Sakura AI Engine の比較調査](https://github.com/KEINOS/report-sakura_ai_engine-for-go)」と同じ 3 課題・同じテストで 5 回検証し、Sakura AI Engine の 10 モデルと比較した。
+本調査は、別調査の「[🌸 Sakura AI Engine の比較調査](https://github.com/KEINOS/report-sakura_ai_engine-for-go)」と同じ 3 課題・同じテストで 5 回検証し、🌸 Sakura AI Engine の 10 モデルの調査結果と比較した。
 
-AI Agent やハーネスによる会話履歴、メモリー、自己学習コンテキストの影響を避けるため、Sakana AI の OpenAI API 互換エンドポイントへ各モデルを直接リクエストし、初回の Go コード生成能力を測定した。
+AI Agent やハーネスによる会話履歴、メモリー、自己学習コンテキストの影響を避けるため、🐡 Sakana AI の OpenAI API 互換エンドポイントへ各モデルを直接リクエストし、初回の Go コード生成能力を測定した。
 
-各モデルに同一の system prompt、user prompt、temperature: 0 を設定し、3 種類の課題をそれぞれ 1 回ずつ生成させた。回答は人手で修正せず、Go 1.26.4 環境で同じ調査を 5 回実施した。課題の作成と調査の実施には Codex を利用している。
+各検証では、モデルに同一の system prompt、user prompt、temperature: 0 を設定し、3 種類の課題をそれぞれ 1 回ずつ生成させた。回答は人手で修正せず、Go 1.26.4 環境で同じ調査を 5 回実施した。課題の作成と調査の実施には Codex を利用している。なお `fugu` は `temperature: 0` を受理するが無視する仕様であり、決定性を保証する条件ではない。
 
 このリポジトリには、全 5 回・計 15 件の API 応答、15 件の抽出コード、検証ログを保存している。
 
@@ -39,9 +39,11 @@ AI Agent やハーネスによる会話履歴、メモリー、自己学習コ�
 
 ## 結論
 
-Fugu は **5 回すべてで 19/19 件の機能テストに合格**した。各回の ParallelMapOrdered は race detector を有効にした 20 回反復試験にもすべて合格した。今回比較した範囲では、Sakura AI Engine の 10 モデルを含めて最も高い正確性と再現性を示した。
+Fugu は **5 回すべてで 19/19 件の機能テストに合格**した。
 
-一方、各回の 3 課題の応答時間中央値をさらに 5 回で中央値化すると 202.87 秒だった。Sakura AI Engine の高品質群では、`preview/Kimi-K2.6` の 125.31 秒、`preview/Qwen3.6-35B-A3B` の 50.56 秒、`Qwen3-Coder-480B-A35B-Instruct-FP8` の 8.51 秒より遅い。Fugu は短い補完を大量・対話的に処理する用途より、数分待っても初回成功率を高めたい複雑なコード生成に向く。
+各回の ParallelMapOrdered は race detector を有効にした 20 回反復試験にもすべて合格した。今回比較した範囲では、🌸 Sakura AI Engine の 10 モデルを含めて最も高い正確性と再現性を示した。
+
+一方、各回の 3 課題の応答時間中央値をさらに 5 回で中央値化すると 202.87 秒だった。🌸 Sakura AI Engine の高品質群では、`preview/Kimi-K2.6` の 125.31 秒、`preview/Qwen3.6-35B-A3B` の 50.56 秒、`Qwen3-Coder-480B-A35B-Instruct-FP8` の 8.51 秒より遅い。Fugu は短い補完を大量・対話的に処理する用途より、数分待っても初回成功率を高めたい複雑なコード生成に向く。
 
 Fugu は次の用途に適している。
 
@@ -73,7 +75,7 @@ Fugu は次の用途に適している。
 
 文字列オプションを解析する。部分結果、型付きエラー、`errors.Is`、デフォルト値、重複ラベル、Go 1.26 の構文・API を検証した。
 
-完全な入力は [`prompts/`](prompts/)、テストは [`fixtures/`](fixtures/) に保存している。Sakura AI Engine 調査のプロンプトとテストから、末尾改行を除く意味のある変更は加えていない。
+完全な入力は [`prompts/`](prompts/)、テストは [`fixtures/`](fixtures/) に保存している。🌸 Sakura AI Engine 調査のプロンプトとテストから、末尾改行を除く意味のある変更は加えていない。
 
 ## 評価方法
 
@@ -91,7 +93,7 @@ go test -run=^$ -bench=. -benchmem -count=3 ./...
 
 通常テスト、vet、lint の後に一時コピーへ `go fix` を適用し、3 課題の race test と benchmark はその変更後のコードで実行した。ParallelMapOrdered の 20 回反復試験だけは、生成された各回のコードを未変更のまま race detector 付きで実行した。
 
-Sakura AI Engine 調査との比較軸は次のとおり。
+🌸 Sakura AI Engine 調査との比較軸は次のとおり。
 
 | 評価軸 | 値 |
 | :----- | :-- |
@@ -102,7 +104,7 @@ Sakura AI Engine 調査との比較軸は次のとおり。
 | Responsiveness | 3 課題の API 応答時間中央値 |
 | Modern Syntax | コンパイル可能かつ `go fix` で変更されなかった課題数 / 3 |
 
-Fugu はタスクに応じて基盤モデルを動的に選ぶ multi-agent system である。Chat Completions API は `temperature` を受理するが無視する。Sakura 調査とのリクエスト形式を合わせるため `temperature: 0` は送信したが、決定性を保証する条件ではない。API の詳細は [`API_SPEC.md`](API_SPEC.md) にまとめた。
+Fugu はタスクに応じて基盤モデルを動的に選ぶ multi-agent system である。Chat Completions API は `temperature` を受理するが無視する。🌸 Sakura AI Engine 調査とのリクエスト形式を合わせるため `temperature: 0` は送信したが、決定性を保証する条件ではない。API の詳細は [`API_SPEC.md`](API_SPEC.md) にまとめた。
 
 ## 5 回の調査結果
 
@@ -129,40 +131,42 @@ Fugu はタスクに応じて基盤モデルを動的に選ぶ multi-agent syste
 
 つまり、Fugu は正しいコードを安定して生成したが、Go 1.26 の最新 API を常に初回から選ぶわけではなかった。
 
-## Sakura AI Engine との比較
+## 🌸 Sakura AI Engine との比較
 
 ### 5 回の合格数と速度
 
 | モデル | 第1回 | 第2回 | 第3回 | 第4回 | 第5回 | 平均合格数 | 合格数の幅 | 応答時間中央値 |
 | :----- | :---: | :---: | :---: | :---: | :---: | :--------: | :----------: | :------------: |
-| **Sakana `fugu`** | **19/19** | **19/19** | **19/19** | **19/19** | **19/19** | **19.0** | **0** | 202.87秒 |
-| Sakura `preview/Qwen3.6-35B-A3B` | 18/19 | 18/19 | 18/19 | 18/19 | 18/19 | 18.0 | **0** | 50.56秒 |
-| Sakura `Qwen3-Coder-480B-A35B-Instruct-FP8` | 17/19 | 17/19 | 17/19 | 16/19 | 17/19 | 16.8 | 1 | **8.51秒** |
-| Sakura `preview/Kimi-K2.6` | 13/19 | 19/19 | 13/19 | 19/19 | 19/19 | 16.6 | 6 | 125.31秒 |
-| Sakura `gpt-oss-120b` | 18/19 | 7/19 | 13/19 | 18/19 | 19/19 | 15.0 | 12 | 8.60秒 |
-| Sakura `preview/Phi-4-multimodal-instruct` | 10/19 | 7/19 | 10/19 | 10/19 | 10/19 | 9.4 | 3 | 2.04秒 |
+| 🐡 **Sakana `fugu`** | **19/19** | **19/19** | **19/19** | **19/19** | **19/19** | **19.0** | **0** | 202.87秒 |
+| 🌸 Sakura `preview/Qwen3.6-35B-A3B` | 18/19 | 18/19 | 18/19 | 18/19 | 18/19 | 18.0 | **0** | 50.56秒 |
+| 🌸 Sakura `Qwen3-Coder-480B-A35B-Instruct-FP8` | 17/19 | 17/19 | 17/19 | 16/19 | 17/19 | 16.8 | 1 | **8.51秒** |
+| 🌸 Sakura `preview/Kimi-K2.6` | 13/19 | 19/19 | 13/19 | 19/19 | 19/19 | 16.6 | 6 | 125.31秒 |
+| 🌸 Sakura `gpt-oss-120b` | 18/19 | 7/19 | 13/19 | 18/19 | 19/19 | 15.0 | 12 | 8.60秒 |
+| 🌸 Sakura `preview/Phi-4-multimodal-instruct` | 10/19 | 7/19 | 10/19 | 10/19 | 10/19 | 9.4 | 3 | 2.04秒 |
 
-Fugu は Qwen3.6 より約 4.0 倍、Qwen3-Coder-480B より約 23.8 倍遅かった。一方、Sakura 側で完全合格した Kimi と gpt-oss は回ごとの変動があり、Fugu は 5 回とも完全合格だった。
+Fugu は Qwen3.6 より約 4.0 倍、Qwen3-Coder-480B より約 23.8 倍遅かった。一方、🌸 Sakura 側で完全合格した Kimi と gpt-oss は回ごとの変動があり、Fugu は 5 回とも完全合格だった。
 
 ### Pareto front
 
-Sakura AI Engine 調査の第 5 回では、Functionality 80% 以上を品質ゲートとした Pareto front は次の 4 モデルだった。
+🌸 Sakura AI Engine 調査の第 5 回では、Functionality 80% 以上を品質ゲートとした Pareto front は次の 4 モデルだった。
 
 - `gpt-oss-120b`
 - `preview/Qwen3.6-35B-A3B`
 - `Qwen3-Coder-480B-A35B-Instruct-FP8`
 - `preview/Kimi-K2.6`
 
-Fugu の固定トークン単価は公開されていない。Fugu は選択された基盤モデルに応じて課金され、複数 agent の場合は最上位モデルに基づく 1 つの rate が使われる。このため Sakura の固定単価と同じ Cost 軸へ数値を入れると誤解を招く。以下は **Cost を除いた 6 軸**で、第 2〜5 回の完全な評価ベクトルを平均し、応答時間は中央値で比較した結果である。候補集合は平均 Functionality 80% 以上に限定した。Sakura 側の値は同調査の [第 2 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run2-summary.json)、[第 3 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run3-summary.json)、[第 4 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run4-summary.json)、[第 5 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run5-summary.json)の集計値から算出した。
+Fugu の固定トークン単価は公開されていない。Fugu は選択された基盤モデルに応じて課金され、複数 agent の場合は最上位モデルに基づく 1 つの rate が使われる。このため 🌸 Sakura の固定単価と同じ Cost 軸へ数値を入れると誤解を招く。以下は **Cost を除いた 6 軸**で、第 2〜5 回の完全な評価ベクトルを平均し、応答時間は中央値で比較した結果である。候補集合は平均 Functionality 80% 以上に限定した。🌸 Sakura 側の値は同調査の [第 2 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run2-summary.json)、[第 3 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run3-summary.json)、[第 4 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run4-summary.json)、[第 5 回](https://github.com/KEINOS/report-sakura_ai_engine-for-go/blob/main/run5-summary.json)の集計値から算出した。
 
 | モデル | Functionality | Effectiveness | Reliability | Usability | Modern | 応答時間 |
 | :----- | ------------: | ------------: | ----------: | --------: | -----: | -------: |
-| **Sakana `fugu`** | **100.0%** | **100.0%** | **100.0%** | **97.2%** | **58.3%** | 173.31秒 |
-| Sakura `preview/Qwen3.6-35B-A3B` | 94.7% | 66.7% | 75.0% | 88.9% | 33.3% | 50.53秒 |
-| Sakura `preview/Kimi-K2.6` | 92.1% | 91.7% | 83.3% | 91.7% | 25.0% | 114.45秒 |
-| Sakura `Qwen3-Coder-480B-A35B-Instruct-FP8` | 88.2% | 33.3% | 56.3% | **97.2%** | 0.0% | **8.50秒** |
+| 🐡 **Sakana `fugu`** | **100.0%** | **100.0%** | **100.0%** | **97.2%** | **58.3%** | 173.31秒 |
+| 🌸 Sakura `preview/Qwen3.6-35B-A3B` | 94.7% | 66.7% | 75.0% | 88.9% | 33.3% | 50.53秒 |
+| 🌸 Sakura `preview/Kimi-K2.6` | 92.1% | 91.7% | 83.3% | 91.7% | 25.0% | 114.45秒 |
+| 🌸 Sakura `Qwen3-Coder-480B-A35B-Instruct-FP8` | 88.2% | 33.3% | 56.3% | **97.2%** | 0.0% | **8.50秒** |
 
-この品質ゲート付き比較では、表の 4 モデルすべてが Pareto front に入る。Fugu より速いモデルは少なくとも一部の品質軸で劣り、Fugu より品質が高いモデルは存在しないためである。ただし Fugu 自身も速度で大きく劣るため、他の 3 モデルを Pareto front から除外しない。`gpt-oss-120b` は第 5 回単独の品質ゲートには合格したが、第 2〜5 回の平均 Functionality が 75.0% のため、この集約比較では候補集合から除外した。
+この品質ゲート付き比較では、表の 4 モデルすべてが Pareto front に入る。Fugu より速いモデルは少なくとも一部の品質軸で劣り、Fugu より品質が高いモデルは存在しないためである。
+
+ただし Fugu 自身も速度で大きく劣るため、他の 3 モデルを Pareto front から除外しない。`gpt-oss-120b` は 🌸 Sakura 側の第 5 回単独の品質ゲートには合格したが、第 2〜5 回の平均 Functionality が 75.0% のため、この集約比較では候補集合から除外した。
 
 Fugu は「最速候補」ではなく、既存 Pareto front に **最高品質・最高再現性・最高待ち時間**という新しい端点を追加するモデルと解釈できる。
 
@@ -176,9 +180,9 @@ Fugu は「最速候補」ではなく、既存 Pareto front に **最高品質�
 
 - 課題は 3 種類で、Go コーディング能力全体を代表するものではない
 - 各回・各課題の生成は 1 回であり、標本数は 5
-- Fugu が内部で選んだ provider や基盤モデルは記録できない
+- 🐡 Fugu が内部で選んだ provider や基盤モデルは記録できない
 - Standard plan の subscription 利用で、request ごとの実測金額は取得していない
-- Sakura の第 1 回には Reliability、Usability などの完全な内訳がないため、6 軸の集約比較は第 2〜5 回を使用した
+- 🌸 Sakura の第 1 回には Reliability、Usability などの完全な内訳がないため、6 軸の集約比較は第 2〜5 回を使用した
 - Modern Syntax は `go fix` がコードを変更しないことを modern syntax の代理指標としている。正しく保守可能なコードでも新しい API へ機械変換できる場合は減点され、逆に古い書き方でも `go fix` の変換対象でなければ検出できない
 - 3 課題の race test は `go fix` 後の一時コピーに対して実行しているため、Reliability の race 成分は常に未変更の生成コードだけを評価した値ではない。ただし ParallelMapOrdered の 20 回反復試験は未変更コードで実施した
 - コードレビュー能力は検証しておらず、並行処理についても 1 種類の課題を 5 回試した結果である。高リスクな本番実装への一般化には追加検証が必要である
