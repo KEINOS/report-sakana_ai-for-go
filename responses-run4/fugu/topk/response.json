@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-fb79deb2c2bb",
+  "object": "chat.completion",
+  "created": 1782211067,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "package topk\n\nimport (\n\t\"container/heap\"\n\t\"sort\"\n)\n\ntype entry struct {\n\tword string\n\tfreq int\n}\n\ntype topKHeap []entry\n\nfunc (h topKHeap) Len() int { return len(h) }\n\nfunc (h topKHeap) Less(i, j int) bool {\n\tif h[i].freq != h[j].freq {\n\t\treturn h[i].freq < h[j].freq\n\t}\n\treturn h[i].word > h[j].word\n}\n\nfunc (h topKHeap) Swap(i, j int) { h[i], h[j] = h[j], h[i] }\n\nfunc (h *topKHeap) Push(x any) {\n\t*h = append(*h, x.(entry))\n}\n\nfunc (h *topKHeap) Pop() any {\n\told := *h\n\tn := len(old)\n\tx := old[n-1]\n\t*h = old[:n-1]\n\treturn x\n}\n\nfunc better(a, b entry) bool {\n\tif a.freq != b.freq {\n\t\treturn a.freq > b.freq\n\t}\n\treturn a.word < b.word\n}\n\nfunc TopKFrequent(words []string, k int) []string {\n\tif k <= 0 || len(words) == 0 {\n\t\treturn []string{}\n\t}\n\n\tcounts := make(map[string]int)\n\tfor _, word := range words {\n\t\tcounts[word]++\n\t}\n\n\tif k > len(counts) {\n\t\tk = len(counts)\n\t}\n\n\th := make(topKHeap, 0, k)\n\tfor word, freq := range counts {\n\t\te := entry{word: word, freq: freq}\n\t\tif len(h) < k {\n\t\t\theap.Push(&h, e)\n\t\t} else if better(e, h[0]) {\n\t\t\th[0] = e\n\t\t\theap.Fix(&h, 0)\n\t\t}\n\t}\n\n\ttop := make([]entry, len(h))\n\tcopy(top, h)\n\n\tsort.Slice(top, func(i, j int) bool {\n\t\treturn better(top[i], top[j])\n\t})\n\n\tresult := make([]string, len(top))\n\tfor i, e := range top {\n\t\tresult[i] = e.word\n\t}\n\treturn result\n}"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 189,
+    "completion_tokens": 1504,
+    "total_tokens": 1693,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}

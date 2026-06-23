@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-28fc08fd96c8",
+  "object": "chat.completion",
+  "created": 1782210816,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```go\npackage options\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Options struct {\n\tLimit  *int\n\tLabels map[string]string\n}\n\ntype ParseError struct {\n\tField string\n\tValue string\n\tErr   error\n}\n\nfunc (e *ParseError) Error() string {\n\treturn fmt.Sprintf(\"parse field %q value %q: %v\", e.Field, e.Value, e.Err)\n}\n\nfunc (e *ParseError) Unwrap() error {\n\treturn e.Err\n}\n\nfunc ParseOptions(spec string, cause error) (Options, error) {\n\topts, perr := parse(spec)\n\n\tvar pe *ParseError\n\tif errors.As(cause, &pe) {\n\t\treturn opts, pe\n\t}\n\tif perr != nil {\n\t\treturn opts, perr\n\t}\n\treturn opts, nil\n}\n\nfunc parse(spec string) (Options, *ParseError) {\n\tlimit := 100\n\topts := Options{\n\t\tLimit:  &limit,\n\t\tLabels: map[string]string{},\n\t}\n\n\tspec = strings.TrimSpace(spec)\n\tif spec == \"\" {\n\t\treturn opts, nil\n\t}\n\n\tfor field := range strings.SplitSeq(spec, \",\") {\n\t\tkey, value, ok := strings.Cut(field, \"=\")\n\t\tif !ok {\n\t\t\treturn opts, &ParseError{Field: strings.TrimSpace(field), Err: errors.New(\"invalid syntax\")}\n\t\t}\n\t\tkey = strings.TrimSpace(key)\n\t\tvalue = strings.TrimSpace(value)\n\n\t\tswitch {\n\t\tcase key == \"limit\":\n\t\t\tn, err := strconv.Atoi(value)\n\t\t\tif err != nil {\n\t\t\t\treturn opts, &ParseError{Field: key, Value: value, Err: err}\n\t\t\t}\n\t\t\tif n < 1 || n > 1000 {\n\t\t\t\treturn opts, &ParseError{Field: key, Value: value, Err: errors.New(\"limit must be between 1 and 1000\")}\n\t\t\t}\n\t\t\tl := n\n\t\t\topts.Limit = &l\n\t\tcase strings.HasPrefix(key, \"label.\"):\n\t\t\tname := key[len(\"label.\"):]\n\t\t\tif name == \"\" {\n\t\t\t\treturn opts, &ParseError{Field: key, Value: value, Err: errors.New(\"label name must be non-empty\")}\n\t\t\t}\n\t\t\topts.Labels[name] = value\n\t\tdefault:\n\t\t\treturn opts, &ParseError{Field: key, Value: value, Err: errors.New(\"unknown field\")}\n\t\t}\n\t}\n\n\treturn opts, nil\n}\n```"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 816,
+    "completion_tokens": 12475,
+    "total_tokens": 13291,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,255 @@
+[
+  {
+    "model": "fugu",
+    "task": "topk",
+    "available": true,
+    "usage": {
+      "prompt_tokens": 189,
+      "completion_tokens": 1504,
+      "total_tokens": 1693,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "orchestration_input_tokens": 0,
+        "orchestration_input_cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "orchestration_output_tokens": 0
+      }
+    },
+    "finish_reason": "stop",
+    "elapsed_seconds": 34.13661950000096,
+    "loc": 66,
+    "gofmt_clean": true,
+    "gofmt_diff": "",
+    "build": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "test": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "{\"Time\":\"2026-06-23T19:59:20.273192+09:00\",\"Action\":\"start\",\"Package\":\"topk\"}\n{\"Time\":\"2026-06-23T19:59:20.599939+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\"}\n{\"Time\":\"2026-06-23T19:59:20.600047+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\",\"Output\":\"=== RUN   TestTopKFrequent\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600083+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\",\"Output\":\"=== PAUSE TestTopKFrequent\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600086+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\"}\n{\"Time\":\"2026-06-23T19:59:20.600089+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\"}\n{\"Time\":\"2026-06-23T19:59:20.600092+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\",\"Output\":\"=== CONT  TestTopKFrequent\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600099+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\"}\n{\"Time\":\"2026-06-23T19:59:20.600101+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\",\"Output\":\"=== RUN   TestTopKFrequent/basic\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.60011+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\",\"Output\":\"=== PAUSE TestTopKFrequent/basic\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600113+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\"}\n{\"Time\":\"2026-06-23T19:59:20.600116+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\"}\n{\"Time\":\"2026-06-23T19:59:20.600124+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\",\"Output\":\"=== RUN   TestTopKFrequent/lexical_tie\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600137+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\",\"Output\":\"=== PAUSE TestTopKFrequent/lexical_tie\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.60014+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\"}\n{\"Time\":\"2026-06-23T19:59:20.600142+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\"}\n{\"Time\":\"2026-06-23T19:59:20.600145+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\",\"Output\":\"=== RUN   TestTopKFrequent/unicode\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600163+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\",\"Output\":\"=== PAUSE TestTopKFrequent/unicode\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600166+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\"}\n{\"Time\":\"2026-06-23T19:59:20.600174+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\"}\n{\"Time\":\"2026-06-23T19:59:20.600176+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\",\"Output\":\"=== RUN   TestTopKFrequent/k_exceeds_unique\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600179+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\",\"Output\":\"=== PAUSE TestTopKFrequent/k_exceeds_unique\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.60018+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\"}\n{\"Time\":\"2026-06-23T19:59:20.600183+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\"}\n{\"Time\":\"2026-06-23T19:59:20.600185+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\",\"Output\":\"=== RUN   TestTopKFrequent/zero\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600187+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\",\"Output\":\"=== PAUSE TestTopKFrequent/zero\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600189+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\"}\n{\"Time\":\"2026-06-23T19:59:20.600192+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\"}\n{\"Time\":\"2026-06-23T19:59:20.600194+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\",\"Output\":\"=== RUN   TestTopKFrequent/negative\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600197+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\",\"Output\":\"=== PAUSE TestTopKFrequent/negative\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600199+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\"}\n{\"Time\":\"2026-06-23T19:59:20.600217+09:00\",\"Action\":\"run\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\"}\n{\"Time\":\"2026-06-23T19:59:20.600219+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\",\"Output\":\"=== RUN   TestTopKFrequent/empty\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600222+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\",\"Output\":\"=== PAUSE TestTopKFrequent/empty\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600223+09:00\",\"Action\":\"pause\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\"}\n{\"Time\":\"2026-06-23T19:59:20.600226+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\"}\n{\"Time\":\"2026-06-23T19:59:20.600228+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\",\"Output\":\"=== CONT  TestTopKFrequent/basic\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600231+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\"}\n{\"Time\":\"2026-06-23T19:59:20.600233+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\",\"Output\":\"=== CONT  TestTopKFrequent/zero\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600244+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\",\"Output\":\"--- PASS: TestTopKFrequent/basic (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600248+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/basic\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600252+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\"}\n{\"Time\":\"2026-06-23T19:59:20.600254+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\",\"Output\":\"=== CONT  TestTopKFrequent/k_exceeds_unique\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600257+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\",\"Output\":\"--- PASS: TestTopKFrequent/k_exceeds_unique (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600264+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/k_exceeds_unique\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600268+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\"}\n{\"Time\":\"2026-06-23T19:59:20.600271+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\",\"Output\":\"=== CONT  TestTopKFrequent/unicode\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.60031+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\",\"Output\":\"--- PASS: TestTopKFrequent/unicode (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600318+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/unicode\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600321+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\"}\n{\"Time\":\"2026-06-23T19:59:20.600324+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\",\"Output\":\"=== CONT  TestTopKFrequent/lexical_tie\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600328+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\",\"Output\":\"--- PASS: TestTopKFrequent/lexical_tie (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600364+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/lexical_tie\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600367+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\",\"Output\":\"--- PASS: TestTopKFrequent/zero (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.60037+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/zero\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600372+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\"}\n{\"Time\":\"2026-06-23T19:59:20.600374+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\",\"Output\":\"=== CONT  TestTopKFrequent/negative\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600377+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\",\"Output\":\"--- PASS: TestTopKFrequent/negative (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600381+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/negative\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600383+09:00\",\"Action\":\"cont\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\"}\n{\"Time\":\"2026-06-23T19:59:20.600385+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\",\"Output\":\"=== CONT  TestTopKFrequent/empty\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600388+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\",\"Output\":\"--- PASS: TestTopKFrequent/empty (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.60039+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent/empty\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600392+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\",\"Output\":\"--- PASS: TestTopKFrequent (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.600394+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Test\":\"TestTopKFrequent\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:20.600396+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Output\":\"PASS\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.601373+09:00\",\"Action\":\"output\",\"Package\":\"topk\",\"Output\":\"ok  \\ttopk\\t0.328s\\n\"}\n{\"Time\":\"2026-06-23T19:59:20.601397+09:00\",\"Action\":\"pass\",\"Package\":\"topk\",\"Elapsed\":0.328}\n",
+      "stderr": "",
+      "passed": [
+        "TestTopKFrequent/basic",
+        "TestTopKFrequent/empty",
+        "TestTopKFrequent/k_exceeds_unique",
+        "TestTopKFrequent/lexical_tie",
+        "TestTopKFrequent/negative",
+        "TestTopKFrequent/unicode",
+        "TestTopKFrequent/zero"
+      ],
+      "failed": [],
+      "passed_count": 7
+    },
+    "vet": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "lint": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "0 issues.\n",
+      "stderr": ""
+    },
+    "go_fix": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "changed": false,
+      "diff": ""
+    },
+    "race": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "ok  \ttopk\t1.352s\n",
+      "stderr": ""
+    },
+    "benchmark": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "goos: darwin\ngoarch: arm64\npkg: topk\ncpu: Apple M4\nBenchmarkTopKFrequent-10    \t     800\t   1416838 ns/op\t  875167 B/op\t     106 allocs/op\nBenchmarkTopKFrequent-10    \t     873\t   1377760 ns/op\t  875154 B/op\t     106 allocs/op\nBenchmarkTopKFrequent-10    \t     858\t   1381504 ns/op\t  875153 B/op\t     106 allocs/op\nPASS\nok  \ttopk\t3.707s\n",
+      "stderr": "",
+      "metrics": {
+        "name": "BenchmarkTopKFrequent",
+        "ns_per_op": 1381504.0,
+        "bytes_per_op": 875153.0,
+        "allocs_per_op": 106.0
+      }
+    }
+  },
+  {
+    "model": "fugu",
+    "task": "pmap",
+    "available": true,
+    "usage": {
+      "prompt_tokens": 10450,
+      "completion_tokens": 2421,
+      "total_tokens": 12871,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "orchestration_input_tokens": 0,
+        "orchestration_input_cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "orchestration_output_tokens": 0
+      }
+    },
+    "finish_reason": "stop",
+    "elapsed_seconds": 284.211213209026,
+    "loc": 75,
+    "gofmt_clean": true,
+    "gofmt_diff": "",
+    "build": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "test": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "{\"Time\":\"2026-06-23T19:59:26.438584+09:00\",\"Action\":\"start\",\"Package\":\"pmap\"}\n{\"Time\":\"2026-06-23T19:59:26.764629+09:00\",\"Action\":\"run\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\"}\n{\"Time\":\"2026-06-23T19:59:26.764789+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\",\"Output\":\"=== RUN   TestParallelMapOrdered\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764832+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\",\"Output\":\"=== PAUSE TestParallelMapOrdered\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764836+09:00\",\"Action\":\"pause\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\"}\n{\"Time\":\"2026-06-23T19:59:26.764842+09:00\",\"Action\":\"run\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\"}\n{\"Time\":\"2026-06-23T19:59:26.764844+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\",\"Output\":\"=== RUN   TestParallelMapValidation\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764858+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\",\"Output\":\"=== PAUSE TestParallelMapValidation\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764861+09:00\",\"Action\":\"pause\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\"}\n{\"Time\":\"2026-06-23T19:59:26.764878+09:00\",\"Action\":\"run\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\"}\n{\"Time\":\"2026-06-23T19:59:26.764881+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\",\"Output\":\"=== RUN   TestParallelMapCancelsAndWaits\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764899+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\",\"Output\":\"=== PAUSE TestParallelMapCancelsAndWaits\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764908+09:00\",\"Action\":\"pause\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\"}\n{\"Time\":\"2026-06-23T19:59:26.764911+09:00\",\"Action\":\"run\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\"}\n{\"Time\":\"2026-06-23T19:59:26.764913+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\",\"Output\":\"=== RUN   TestParallelMapPanicBecomesError\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764929+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\",\"Output\":\"=== PAUSE TestParallelMapPanicBecomesError\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764932+09:00\",\"Action\":\"pause\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\"}\n{\"Time\":\"2026-06-23T19:59:26.764934+09:00\",\"Action\":\"run\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\"}\n{\"Time\":\"2026-06-23T19:59:26.764937+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\",\"Output\":\"=== RUN   TestParallelMapParentCancellation\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764949+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\",\"Output\":\"=== PAUSE TestParallelMapParentCancellation\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.764952+09:00\",\"Action\":\"pause\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\"}\n{\"Time\":\"2026-06-23T19:59:26.764955+09:00\",\"Action\":\"run\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapDoesNotLeakObviousGoroutines\"}\n{\"Time\":\"2026-06-23T19:59:26.764957+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapDoesNotLeakObviousGoroutines\",\"Output\":\"=== RUN   TestParallelMapDoesNotLeakObviousGoroutines\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.817782+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapDoesNotLeakObviousGoroutines\",\"Output\":\"--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.817919+09:00\",\"Action\":\"pass\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapDoesNotLeakObviousGoroutines\",\"Elapsed\":0.05}\n{\"Time\":\"2026-06-23T19:59:26.817986+09:00\",\"Action\":\"cont\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\"}\n{\"Time\":\"2026-06-23T19:59:26.817993+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\",\"Output\":\"=== CONT  TestParallelMapOrdered\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818024+09:00\",\"Action\":\"cont\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\"}\n{\"Time\":\"2026-06-23T19:59:26.81803+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\",\"Output\":\"=== CONT  TestParallelMapCancelsAndWaits\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818035+09:00\",\"Action\":\"cont\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\"}\n{\"Time\":\"2026-06-23T19:59:26.818039+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\",\"Output\":\"=== CONT  TestParallelMapValidation\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818044+09:00\",\"Action\":\"cont\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\"}\n{\"Time\":\"2026-06-23T19:59:26.818049+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\",\"Output\":\"=== CONT  TestParallelMapPanicBecomesError\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818054+09:00\",\"Action\":\"cont\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\"}\n{\"Time\":\"2026-06-23T19:59:26.818058+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\",\"Output\":\"=== CONT  TestParallelMapParentCancellation\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818066+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\",\"Output\":\"--- PASS: TestParallelMapValidation (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818071+09:00\",\"Action\":\"pass\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapValidation\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:26.818089+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\",\"Output\":\"--- PASS: TestParallelMapParentCancellation (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818096+09:00\",\"Action\":\"pass\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapParentCancellation\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:26.818101+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\",\"Output\":\"--- PASS: TestParallelMapPanicBecomesError (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.818109+09:00\",\"Action\":\"pass\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapPanicBecomesError\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:26.818114+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\",\"Output\":\"--- PASS: TestParallelMapCancelsAndWaits (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.823912+09:00\",\"Action\":\"pass\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapCancelsAndWaits\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:26.823949+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\",\"Output\":\"--- PASS: TestParallelMapOrdered (0.01s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.823961+09:00\",\"Action\":\"pass\",\"Package\":\"pmap\",\"Test\":\"TestParallelMapOrdered\",\"Elapsed\":0.01}\n{\"Time\":\"2026-06-23T19:59:26.823968+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Output\":\"PASS\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.825755+09:00\",\"Action\":\"output\",\"Package\":\"pmap\",\"Output\":\"ok  \\tpmap\\t0.387s\\n\"}\n{\"Time\":\"2026-06-23T19:59:26.825787+09:00\",\"Action\":\"pass\",\"Package\":\"pmap\",\"Elapsed\":0.387}\n",
+      "stderr": "",
+      "passed": [
+        "TestParallelMapCancelsAndWaits",
+        "TestParallelMapDoesNotLeakObviousGoroutines",
+        "TestParallelMapOrdered",
+        "TestParallelMapPanicBecomesError",
+        "TestParallelMapParentCancellation",
+        "TestParallelMapValidation"
+      ],
+      "failed": [],
+      "passed_count": 6
+    },
+    "vet": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "lint": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "0 issues.\n",
+      "stderr": ""
+    },
+    "go_fix": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "changed": false,
+      "diff": ""
+    },
+    "race": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "ok  \tpmap\t1.413s\n",
+      "stderr": ""
+    },
+    "benchmark": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "goos: darwin\ngoarch: arm64\npkg: pmap\ncpu: Apple M4\nBenchmarkParallelMapOrdered-10    \t     297\t   3911544 ns/op\t 1203254 B/op\t   20012 allocs/op\nBenchmarkParallelMapOrdered-10    \t     308\t   3899526 ns/op\t 1202367 B/op\t   20010 allocs/op\nBenchmarkParallelMapOrdered-10    \t     310\t   3845917 ns/op\t 1202348 B/op\t   20010 allocs/op\nPASS\nok  \tpmap\t3.710s\n",
+      "stderr": "",
+      "metrics": {
+        "name": "BenchmarkParallelMapOrdered",
+        "ns_per_op": 3845917.0,
+        "bytes_per_op": 1202348.0,
+        "allocs_per_op": 20010.0
+      }
+    }
+  },
+  {
+    "model": "fugu",
+    "task": "options",
+    "available": true,
+    "usage": {
+      "prompt_tokens": 816,
+      "completion_tokens": 12152,
+      "total_tokens": 12968,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "orchestration_input_tokens": 0,
+        "orchestration_input_cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "orchestration_output_tokens": 0
+      }
+    },
+    "finish_reason": "stop",
+    "elapsed_seconds": 333.5147543750063,
+    "loc": 68,
+    "gofmt_clean": true,
+    "gofmt_diff": "",
+    "build": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "test": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "{\"Time\":\"2026-06-23T19:59:32.737511+09:00\",\"Action\":\"start\",\"Package\":\"options\"}\n{\"Time\":\"2026-06-23T19:59:33.063711+09:00\",\"Action\":\"run\",\"Package\":\"options\",\"Test\":\"TestParseOptions\"}\n{\"Time\":\"2026-06-23T19:59:33.063767+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions\",\"Output\":\"=== RUN   TestParseOptions\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063797+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions\",\"Output\":\"=== PAUSE TestParseOptions\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.0638+09:00\",\"Action\":\"pause\",\"Package\":\"options\",\"Test\":\"TestParseOptions\"}\n{\"Time\":\"2026-06-23T19:59:33.063803+09:00\",\"Action\":\"run\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\"}\n{\"Time\":\"2026-06-23T19:59:33.063805+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\",\"Output\":\"=== RUN   TestParseOptionsErrors\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063809+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\",\"Output\":\"=== PAUSE TestParseOptionsErrors\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063811+09:00\",\"Action\":\"pause\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\"}\n{\"Time\":\"2026-06-23T19:59:33.063824+09:00\",\"Action\":\"run\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\"}\n{\"Time\":\"2026-06-23T19:59:33.063826+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\",\"Output\":\"=== RUN   TestParseOptionsTypedCause\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.06383+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\",\"Output\":\"=== PAUSE TestParseOptionsTypedCause\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063832+09:00\",\"Action\":\"pause\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\"}\n{\"Time\":\"2026-06-23T19:59:33.063843+09:00\",\"Action\":\"run\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\"}\n{\"Time\":\"2026-06-23T19:59:33.063845+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\",\"Output\":\"=== RUN   TestParseErrorContract\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063847+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\",\"Output\":\"=== PAUSE TestParseErrorContract\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063849+09:00\",\"Action\":\"pause\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\"}\n{\"Time\":\"2026-06-23T19:59:33.063851+09:00\",\"Action\":\"cont\",\"Package\":\"options\",\"Test\":\"TestParseOptions\"}\n{\"Time\":\"2026-06-23T19:59:33.063853+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions\",\"Output\":\"=== CONT  TestParseOptions\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.06387+09:00\",\"Action\":\"run\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\"}\n{\"Time\":\"2026-06-23T19:59:33.063874+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\",\"Output\":\"=== RUN   TestParseOptions/empty\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063876+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\",\"Output\":\"=== PAUSE TestParseOptions/empty\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063878+09:00\",\"Action\":\"pause\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\"}\n{\"Time\":\"2026-06-23T19:59:33.06388+09:00\",\"Action\":\"run\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\"}\n{\"Time\":\"2026-06-23T19:59:33.063881+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\",\"Output\":\"=== RUN   TestParseOptions/limit_and_labels\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063886+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\",\"Output\":\"=== PAUSE TestParseOptions/limit_and_labels\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063889+09:00\",\"Action\":\"pause\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\"}\n{\"Time\":\"2026-06-23T19:59:33.063896+09:00\",\"Action\":\"cont\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\"}\n{\"Time\":\"2026-06-23T19:59:33.063898+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\",\"Output\":\"=== CONT  TestParseOptionsTypedCause\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063904+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\",\"Output\":\"--- PASS: TestParseOptionsTypedCause (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063907+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Test\":\"TestParseOptionsTypedCause\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:33.063911+09:00\",\"Action\":\"run\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\"}\n{\"Time\":\"2026-06-23T19:59:33.063912+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\",\"Output\":\"=== RUN   TestParseOptions/spaces_and_duplicate\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063915+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\",\"Output\":\"=== PAUSE TestParseOptions/spaces_and_duplicate\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063917+09:00\",\"Action\":\"pause\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\"}\n{\"Time\":\"2026-06-23T19:59:33.06392+09:00\",\"Action\":\"cont\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\"}\n{\"Time\":\"2026-06-23T19:59:33.063921+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\",\"Output\":\"=== CONT  TestParseOptions/empty\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.063956+09:00\",\"Action\":\"cont\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\"}\n{\"Time\":\"2026-06-23T19:59:33.063993+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\",\"Output\":\"=== CONT  TestParseErrorContract\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064007+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\",\"Output\":\"--- PASS: TestParseErrorContract (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.06401+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Test\":\"TestParseErrorContract\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:33.064012+09:00\",\"Action\":\"cont\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\"}\n{\"Time\":\"2026-06-23T19:59:33.064014+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\",\"Output\":\"=== CONT  TestParseOptions/limit_and_labels\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064019+09:00\",\"Action\":\"cont\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\"}\n{\"Time\":\"2026-06-23T19:59:33.064021+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\",\"Output\":\"=== CONT  TestParseOptions/spaces_and_duplicate\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064023+09:00\",\"Action\":\"cont\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\"}\n{\"Time\":\"2026-06-23T19:59:33.064044+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\",\"Output\":\"=== CONT  TestParseOptionsErrors\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064048+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\",\"Output\":\"--- PASS: TestParseOptionsErrors (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.06405+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Test\":\"TestParseOptionsErrors\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:33.064052+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\",\"Output\":\"--- PASS: TestParseOptions/empty (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064054+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Test\":\"TestParseOptions/empty\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:33.064056+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\",\"Output\":\"--- PASS: TestParseOptions/limit_and_labels (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064058+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Test\":\"TestParseOptions/limit_and_labels\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:33.06406+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\",\"Output\":\"--- PASS: TestParseOptions/spaces_and_duplicate (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064074+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Test\":\"TestParseOptions/spaces_and_duplicate\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:33.064077+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Test\":\"TestParseOptions\",\"Output\":\"--- PASS: TestParseOptions (0.00s)\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064078+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Test\":\"TestParseOptions\",\"Elapsed\":0}\n{\"Time\":\"2026-06-23T19:59:33.06408+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Output\":\"PASS\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064585+09:00\",\"Action\":\"output\",\"Package\":\"options\",\"Output\":\"ok  \\toptions\\t0.327s\\n\"}\n{\"Time\":\"2026-06-23T19:59:33.064598+09:00\",\"Action\":\"pass\",\"Package\":\"options\",\"Elapsed\":0.327}\n",
+      "stderr": "",
+      "passed": [
+        "TestParseErrorContract",
+        "TestParseOptions/empty",
+        "TestParseOptions/limit_and_labels",
+        "TestParseOptions/spaces_and_duplicate",
+        "TestParseOptionsErrors",
+        "TestParseOptionsTypedCause"
+      ],
+      "failed": [],
+      "passed_count": 6
+    },
+    "vet": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "lint": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "0 issues.\n",
+      "stderr": ""
+    },
+    "go_fix": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "changed": true,
+      "diff": "--- before.go\n+++ after.go\n@@ -57,7 +57,7 @@\n \t\treturn opts, nil\n \t}\n \n-\tfor _, field := range strings.Split(spec, \",\") {\n+\tfor field := range strings.SplitSeq(spec, \",\") {\n \t\tkey, val, found := strings.Cut(field, \"=\")\n \t\tif !found {\n \t\t\treturn opts, &ParseError{Field: strings.TrimSpace(field), Err: errInvalidSyntax}"
+    },
+    "race": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "ok  \toptions\t1.356s\n",
+      "stderr": ""
+    },
+    "benchmark": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "goos: darwin\ngoarch: arm64\npkg: options\ncpu: Apple M4\nBenchmarkParseOptions-10    \t 8297011\t       132.5 ns/op\t     360 B/op\t       5 allocs/op\nBenchmarkParseOptions-10    \t 9148380\t       131.1 ns/op\t     360 B/op\t       5 allocs/op\nBenchmarkParseOptions-10    \t 9228088\t       130.5 ns/op\t     360 B/op\t       5 allocs/op\nPASS\nok  \toptions\t3.830s\n",
+      "stderr": "",
+      "metrics": {
+        "name": "BenchmarkParseOptions",
+        "ns_per_op": 130.5,
+        "bytes_per_op": 360.0,
+        "allocs_per_op": 5.0
+      }
+    }
+  }
+]

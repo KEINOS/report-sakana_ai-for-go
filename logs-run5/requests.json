@@ -1,0 +1,77 @@
+[
+  {
+    "model": "fugu",
+    "task": "topk",
+    "elapsed_seconds": 44.489086209010566,
+    "status": 200,
+    "usage": {
+      "prompt_tokens": 189,
+      "completion_tokens": 1495,
+      "total_tokens": 1684,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "orchestration_input_tokens": 0,
+        "orchestration_input_cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "orchestration_output_tokens": 0
+      }
+    },
+    "finish_reason": "stop",
+    "message_keys": [
+      "role",
+      "content"
+    ]
+  },
+  {
+    "model": "fugu",
+    "task": "pmap",
+    "elapsed_seconds": 229.58640600001672,
+    "status": 200,
+    "usage": {
+      "prompt_tokens": 669,
+      "completion_tokens": 12215,
+      "total_tokens": 12884,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "orchestration_input_tokens": 0,
+        "orchestration_input_cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "orchestration_output_tokens": 0
+      }
+    },
+    "finish_reason": "stop",
+    "message_keys": [
+      "role",
+      "content"
+    ]
+  },
+  {
+    "model": "fugu",
+    "task": "options",
+    "elapsed_seconds": 125.12707920800312,
+    "status": 200,
+    "usage": {
+      "prompt_tokens": 319,
+      "completion_tokens": 3810,
+      "total_tokens": 4129,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "orchestration_input_tokens": 0,
+        "orchestration_input_cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "orchestration_output_tokens": 0
+      }
+    },
+    "finish_reason": "stop",
+    "message_keys": [
+      "role",
+      "content"
+    ]
+  }
+]

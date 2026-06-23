@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-23",
+  "model": "fugu",
+  "temperature_note": "The API accepts but ignores temperature.",
+  "pricing_note": "Fugu pricing depends on the highest-tier routed underlying model; the Standard subscription was used.",
+  "result": {
+    "functionality": 1.0,
+    "effectiveness": 1.0,
+    "reliability": 1.0,
+    "usability": 1.0,
+    "response_seconds": 215.45085279198247,
+    "modern": 0.6666666666666666,
+    "passed": 19,
+    "requirements": 19,
+    "pmap_passed": 6,
+    "race_tasks": 3,
+    "modern_tasks": 2,
+    "loc": 229,
+    "completion_tokens": 25742,
+    "prompt_tokens": 1674
+  }
+}

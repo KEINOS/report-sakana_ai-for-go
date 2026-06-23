@@ -1,0 +1,442 @@
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapCancelsAndWaits
+--- PASS: TestParallelMapValidation (0.00s)
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapParentCancellation
+--- PASS: TestParallelMapValidation (0.00s)
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapParentCancellation
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapValidation (0.00s)
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapValidation
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapParentCancellation
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapValidation
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapValidation
+--- PASS: TestParallelMapValidation (0.00s)
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapValidation (0.00s)
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapCancelsAndWaits
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapValidation
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapParentCancellation
+--- PASS: TestParallelMapValidation (0.00s)
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapValidation
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapValidation
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapPanicBecomesError
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapParentCancellation (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+=== RUN   TestParallelMapOrdered
+=== PAUSE TestParallelMapOrdered
+=== RUN   TestParallelMapValidation
+=== PAUSE TestParallelMapValidation
+=== RUN   TestParallelMapCancelsAndWaits
+=== PAUSE TestParallelMapCancelsAndWaits
+=== RUN   TestParallelMapPanicBecomesError
+=== PAUSE TestParallelMapPanicBecomesError
+=== RUN   TestParallelMapParentCancellation
+=== PAUSE TestParallelMapParentCancellation
+=== RUN   TestParallelMapDoesNotLeakObviousGoroutines
+--- PASS: TestParallelMapDoesNotLeakObviousGoroutines (0.05s)
+=== CONT  TestParallelMapParentCancellation
+=== CONT  TestParallelMapOrdered
+=== CONT  TestParallelMapCancelsAndWaits
+=== CONT  TestParallelMapPanicBecomesError
+--- PASS: TestParallelMapParentCancellation (0.00s)
+=== CONT  TestParallelMapValidation
+--- PASS: TestParallelMapPanicBecomesError (0.00s)
+--- PASS: TestParallelMapValidation (0.00s)
+--- PASS: TestParallelMapCancelsAndWaits (0.00s)
+--- PASS: TestParallelMapOrdered (0.01s)
+PASS
+ok  	pmap	2.518s

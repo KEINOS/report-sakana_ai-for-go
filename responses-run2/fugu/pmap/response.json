@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-3f0da79cdd5e",
+  "object": "chat.completion",
+  "created": 1782210229,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```go\npackage pmap\n\nimport (\n\t\"context\"\n\t\"errors\"\n\t\"fmt\"\n\t\"sync\"\n\t\"sync/atomic\"\n)\n\n// ParallelMapOrdered applies fn to each element of input using at most workers\n// concurrent goroutines, returning the results in input order.\nfunc ParallelMapOrdered(\n\tctx context.Context,\n\tinput []int,\n\tworkers int,\n\tfn func(context.Context, int) (int, error),\n) ([]int, error) {\n\tif workers <= 0 {\n\t\treturn nil, fmt.Errorf(\"pmap: workers must be positive, got %d\", workers)\n\t}\n\tif fn == nil {\n\t\treturn nil, errors.New(\"pmap: fn must not be nil\")\n\t}\n\tif len(input) == 0 {\n\t\treturn []int{}, nil\n\t}\n\n\tctx, cancel := context.WithCancelCause(ctx)\n\tdefer cancel(nil)\n\n\tresults := make([]int, len(input))\n\n\tvar (\n\t\tnext     atomic.Int64\n\t\tfirstErr error\n\t\terrOnce  sync.Once\n\t)\n\n\tn := workers\n\tif n > len(input) {\n\t\tn = len(input)\n\t}\n\n\tvar wg sync.WaitGroup\n\twg.Add(n)\n\tfor range n {\n\t\tgo func() {\n\t\t\tdefer wg.Done()\n\t\t\tfor {\n\t\t\t\ti := int(next.Add(1)) - 1\n\t\t\t\tif i >= len(input) {\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tif ctx.Err() != nil {\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tv, err := call(ctx, fn, input[i])\n\t\t\t\tif err != nil {\n\t\t\t\t\terrOnce.Do(func() {\n\t\t\t\t\t\tfirstErr = err\n\t\t\t\t\t\tcancel(err)\n\t\t\t\t\t})\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tresults[i] = v\n\t\t\t}\n\t\t}()\n\t}\n\twg.Wait()\n\n\tif firstErr != nil {\n\t\treturn nil, firstErr\n\t}\n\tif err := context.Cause(ctx); err != nil {\n\t\treturn nil, err\n\t}\n\treturn results, nil\n}\n\n// call invokes fn while recovering any panic and converting it to an error.\nfunc call(\n\tctx context.Context,\n\tfn func(context.Context, int) (int, error),\n\tv int,\n) (out int, err error) {\n\tdefer func() {\n\t\tif r := recover(); r != nil {\n\t\t\terr = fmt.Errorf(\"pmap: panic in fn: %v\", r)\n\t\t}\n\t}()\n\treturn fn(ctx, v)\n}\n```"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 669,
+    "completion_tokens": 12462,
+    "total_tokens": 13131,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}

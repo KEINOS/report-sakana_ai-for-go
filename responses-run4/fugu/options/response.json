@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-312e340f3ab1",
+  "object": "chat.completion",
+  "created": 1782211385,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```go\npackage options\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n// Options holds the parsed configuration.\ntype Options struct {\n\tLimit  *int\n\tLabels map[string]string\n}\n\n// ParseError describes a failure parsing a single field.\ntype ParseError struct {\n\tField string\n\tValue string\n\tErr   error\n}\n\nfunc (e *ParseError) Error() string {\n\treturn fmt.Sprintf(\"parse field %q (value %q): %v\", e.Field, e.Value, e.Err)\n}\n\nfunc (e *ParseError) Unwrap() error { return e.Err }\n\nvar (\n\terrInvalidSyntax = errors.New(\"invalid syntax, expected key=value\")\n\terrUnknownField  = errors.New(\"unknown field\")\n\terrEmptyLabel    = errors.New(\"label name must be non-empty\")\n\terrInvalidLimit  = errors.New(\"limit must be an integer from 1 through 1000\")\n)\n\n// ParseOptions parses spec into Options.\n//\n// If cause contains a *ParseError anywhere in its error tree, spec is parsed\n// normally and the parsed Options are returned together with that same\n// *ParseError. Otherwise any error encountered while parsing spec is returned.\nfunc ParseOptions(spec string, cause error) (Options, error) {\n\topts, perr := parse(spec)\n\n\tvar pe *ParseError\n\tif errors.As(cause, &pe) {\n\t\treturn opts, pe\n\t}\n\treturn opts, perr\n}\n\nfunc parse(spec string) (Options, error) {\n\tlimit := 100\n\topts := Options{Limit: &limit, Labels: map[string]string{}}\n\n\tspec = strings.TrimSpace(spec)\n\tif spec == \"\" {\n\t\treturn opts, nil\n\t}\n\n\tfor _, field := range strings.Split(spec, \",\") {\n\t\tkey, val, found := strings.Cut(field, \"=\")\n\t\tif !found {\n\t\t\treturn opts, &ParseError{Field: strings.TrimSpace(field), Err: errInvalidSyntax}\n\t\t}\n\t\tkey = strings.TrimSpace(key)\n\t\tval = strings.TrimSpace(val)\n\n\t\tswitch {\n\t\tcase key == \"limit\":\n\t\t\tn, err := strconv.Atoi(val)\n\t\t\tif err != nil || n < 1 || n > 1000 {\n\t\t\t\treturn opts, &ParseError{Field: key, Value: val, Err: errInvalidLimit}\n\t\t\t}\n\t\t\tl := n\n\t\t\topts.Limit = &l\n\n\t\tcase strings.HasPrefix(key, \"label.\"):\n\t\t\tname := key[len(\"label.\"):]\n\t\t\tif name == \"\" {\n\t\t\t\treturn opts, &ParseError{Field: key, Value: val, Err: errEmptyLabel}\n\t\t\t}\n\t\t\topts.Labels[name] = val\n\n\t\tdefault:\n\t\t\treturn opts, &ParseError{Field: key, Value: val, Err: errUnknownField}\n\t\t}\n\t}\n\n\treturn opts, nil\n}\n```"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 816,
+    "completion_tokens": 12152,
+    "total_tokens": 12968,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}

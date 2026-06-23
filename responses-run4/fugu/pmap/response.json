@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-409f35a64354",
+  "object": "chat.completion",
+  "created": 1782211101,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "package pmap\n\nimport (\n\t\"context\"\n\t\"errors\"\n\t\"fmt\"\n\t\"sync\"\n)\n\n// ParallelMapOrdered applies fn to each element of input concurrently, using at\n// most workers goroutines, and returns the results in the original input order.\nfunc ParallelMapOrdered(\n\tctx context.Context,\n\tinput []int,\n\tworkers int,\n\tfn func(context.Context, int) (int, error),\n) ([]int, error) {\n\tif workers <= 0 {\n\t\treturn nil, fmt.Errorf(\"pmap: workers must be > 0, got %d\", workers)\n\t}\n\tif fn == nil {\n\t\treturn nil, errors.New(\"pmap: fn must not be nil\")\n\t}\n\tif len(input) == 0 {\n\t\treturn []int{}, nil\n\t}\n\n\tctx, cancel := context.WithCancel(ctx)\n\tdefer cancel()\n\n\tresults := make([]int, len(input))\n\tsem := make(chan struct{}, workers)\n\n\tvar (\n\t\twg       sync.WaitGroup\n\t\tmu       sync.Mutex\n\t\tfirstErr error\n\t)\n\n\tsetErr := func(err error) {\n\t\tmu.Lock()\n\t\tif firstErr == nil {\n\t\t\tfirstErr = err\n\t\t\tcancel()\n\t\t}\n\t\tmu.Unlock()\n\t}\n\ndispatch:\n\tfor i, v := range input {\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\tsetErr(context.Cause(ctx))\n\t\t\tbreak dispatch\n\t\tcase sem <- struct{}{}:\n\t\t}\n\n\t\twg.Add(1)\n\t\tgo func(i, v int) {\n\t\t\tdefer wg.Done()\n\t\t\tdefer func() { <-sem }()\n\t\t\tdefer func() {\n\t\t\t\tif r := recover(); r != nil {\n\t\t\t\t\tsetErr(fmt.Errorf(\"pmap: panic in fn for input[%d]: %v\", i, r))\n\t\t\t\t}\n\t\t\t}()\n\n\t\t\tselect {\n\t\t\tcase <-ctx.Done():\n\t\t\t\treturn\n\t\t\tdefault:\n\t\t\t}\n\n\t\t\tres, err := fn(ctx, v)\n\t\t\tif err != nil {\n\t\t\t\tsetErr(err)\n\t\t\t\treturn\n\t\t\t}\n\t\t\tresults[i] = res\n\t\t}(i, v)\n\t}\n\n\twg.Wait()\n\n\tif firstErr != nil {\n\t\treturn nil, firstErr\n\t}\n\treturn results, nil\n}"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 10450,
+    "completion_tokens": 2421,
+    "total_tokens": 12871,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}

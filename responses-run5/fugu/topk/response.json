@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-2e5e55b078d9",
+  "object": "chat.completion",
+  "created": 1782211742,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "package topk\n\nimport (\n\t\"container/heap\"\n\t\"sort\"\n)\n\nfunc TopKFrequent(words []string, k int) []string {\n\tif k <= 0 || len(words) == 0 {\n\t\treturn []string{}\n\t}\n\n\tcounts := make(map[string]int, len(words))\n\tfor _, word := range words {\n\t\tcounts[word]++\n\t}\n\n\tif k > len(counts) {\n\t\tk = len(counts)\n\t}\n\n\th := make(entryHeap, 0, k)\n\tfor word, count := range counts {\n\t\te := entry{word: word, count: count}\n\t\tif len(h) < k {\n\t\t\theap.Push(&h, e)\n\t\t\tcontinue\n\t\t}\n\t\tif better(e, h[0]) {\n\t\t\th[0] = e\n\t\t\theap.Fix(&h, 0)\n\t\t}\n\t}\n\n\tsort.Slice(h, func(i, j int) bool {\n\t\treturn better(h[i], h[j])\n\t})\n\n\tresult := make([]string, len(h))\n\tfor i, e := range h {\n\t\tresult[i] = e.word\n\t}\n\treturn result\n}\n\ntype entry struct {\n\tword  string\n\tcount int\n}\n\nfunc better(a, b entry) bool {\n\tif a.count != b.count {\n\t\treturn a.count > b.count\n\t}\n\treturn a.word < b.word\n}\n\nfunc worse(a, b entry) bool {\n\tif a.count != b.count {\n\t\treturn a.count < b.count\n\t}\n\treturn a.word > b.word\n}\n\ntype entryHeap []entry\n\nfunc (h entryHeap) Len() int { return len(h) }\n\nfunc (h entryHeap) Less(i, j int) bool {\n\treturn worse(h[i], h[j])\n}\n\nfunc (h entryHeap) Swap(i, j int) {\n\th[i], h[j] = h[j], h[i]\n}\n\nfunc (h *entryHeap) Push(x any) {\n\t*h = append(*h, x.(entry))\n}\n\nfunc (h *entryHeap) Pop() any {\n\told := *h\n\tn := len(old)\n\tx := old[n-1]\n\t*h = old[:n-1]\n\treturn x\n}"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 189,
+    "completion_tokens": 1495,
+    "total_tokens": 1684,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}

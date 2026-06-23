@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-f398347764ba",
+  "object": "chat.completion",
+  "created": 1782209981,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```go\npackage options\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n// Options holds parsed configuration.\ntype Options struct {\n\tLimit  *int\n\tLabels map[string]string\n}\n\n// ParseError describes a failure while parsing a single field.\ntype ParseError struct {\n\tField string\n\tValue string\n\tErr   error\n}\n\nfunc (e *ParseError) Error() string {\n\treturn fmt.Sprintf(\"parse error in field %q (value %q): %v\", e.Field, e.Value, e.Err)\n}\n\nfunc (e *ParseError) Unwrap() error {\n\treturn e.Err\n}\n\n// ParseOptions parses a comma-separated key=value spec into Options.\n//\n// If cause contains a *ParseError anywhere in its error tree, spec is parsed\n// normally and the parsed Options is returned together with that same\n// *ParseError. Otherwise any error encountered while parsing spec is returned\n// alongside the partially parsed Options.\nfunc ParseOptions(spec string, cause error) (Options, error) {\n\tlimit := 100\n\topts := Options{\n\t\tLimit:  &limit,\n\t\tLabels: map[string]string{},\n\t}\n\n\tvar pe *ParseError\n\tif errors.As(cause, &pe) {\n\t\tparseSpec(spec, &opts)\n\t\treturn opts, pe\n\t}\n\n\tif err := parseSpec(spec, &opts); err != nil {\n\t\treturn opts, err\n\t}\n\treturn opts, nil\n}\n\nfunc parseSpec(spec string, opts *Options) error {\n\tspec = strings.TrimSpace(spec)\n\tif spec == \"\" {\n\t\treturn nil\n\t}\n\n\tfor _, field := range strings.Split(spec, \",\") {\n\t\tkey, value, ok := strings.Cut(field, \"=\")\n\t\tkey = strings.TrimSpace(key)\n\t\tvalue = strings.TrimSpace(value)\n\t\tif !ok {\n\t\t\treturn &ParseError{Field: key, Value: \"\", Err: errors.New(\"missing '=' separator\")}\n\t\t}\n\n\t\tswitch {\n\t\tcase key == \"limit\":\n\t\t\tn, err := strconv.Atoi(value)\n\t\t\tif err != nil {\n\t\t\t\treturn &ParseError{Field: key, Value: value, Err: err}\n\t\t\t}\n\t\t\tif n < 1 || n > 1000 {\n\t\t\t\treturn &ParseError{Field: key, Value: value, Err: errors.New(\"limit out of range [1,1000]\")}\n\t\t\t}\n\t\t\tv := n\n\t\t\topts.Limit = &v\n\n\t\tcase strings.HasPrefix(key, \"label.\"):\n\t\t\tname := key[len(\"label.\"):]\n\t\t\tif name == \"\" {\n\t\t\t\treturn &ParseError{Field: key, Value: value, Err: errors.New(\"empty label name\")}\n\t\t\t}\n\t\t\topts.Labels[name] = value\n\n\t\tdefault:\n\t\t\treturn &ParseError{Field: key, Value: value, Err: errors.New(\"unknown field\")}\n\t\t}\n\t}\n\n\treturn nil\n}\n```"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 816,
+    "completion_tokens": 12676,
+    "total_tokens": 13492,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}

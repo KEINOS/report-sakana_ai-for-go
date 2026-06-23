@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl-a5e716a0b769",
+  "object": "chat.completion",
+  "created": 1782210430,
+  "model": "fugu",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "package options\n\nimport (\n\t\"errors\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Options struct {\n\tLimit  *int\n\tLabels map[string]string\n}\n\ntype ParseError struct {\n\tField string\n\tValue string\n\tErr   error\n}\n\nfunc (e *ParseError) Error() string {\n\tif e == nil {\n\t\treturn \"<nil>\"\n\t}\n\n\tvar b strings.Builder\n\tb.WriteString(\"parse options\")\n\tif e.Field != \"\" {\n\t\tb.WriteString(\": \")\n\t\tb.WriteString(e.Field)\n\t\tb.WriteByte('=')\n\t\tb.WriteString(strconv.Quote(e.Value))\n\t} else if e.Value != \"\" {\n\t\tb.WriteString(\": \")\n\t\tb.WriteString(strconv.Quote(e.Value))\n\t}\n\tif e.Err != nil {\n\t\tb.WriteString(\": \")\n\t\tb.WriteString(e.Err.Error())\n\t}\n\treturn b.String()\n}\n\nfunc (e *ParseError) Unwrap() error {\n\tif e == nil {\n\t\treturn nil\n\t}\n\treturn e.Err\n}\n\nvar (\n\terrInvalidSyntax  = errors.New(\"invalid syntax\")\n\terrUnknownField   = errors.New(\"unknown field\")\n\terrLimitOutOfRange = errors.New(\"limit out of range\")\n)\n\nfunc ParseOptions(spec string, cause error) (Options, error) {\n\tvar inherited *ParseError\n\t_ = errors.As(cause, &inherited)\n\n\topts, parseErr := parseOptions(spec)\n\tif inherited != nil {\n\t\treturn opts, inherited\n\t}\n\tif parseErr != nil {\n\t\treturn opts, parseErr\n\t}\n\treturn opts, nil\n}\n\nfunc parseOptions(spec string) (Options, *ParseError) {\n\topts := defaultOptions()\n\tif strings.TrimSpace(spec) == \"\" {\n\t\treturn opts, nil\n\t}\n\n\tfor _, field := range strings.Split(spec, \",\") {\n\t\tkey, value, ok := strings.Cut(field, \"=\")\n\t\tif !ok {\n\t\t\treturn opts, &ParseError{\n\t\t\t\tField: strings.TrimSpace(field),\n\t\t\t\tErr:   errInvalidSyntax,\n\t\t\t}\n\t\t}\n\n\t\tkey = strings.TrimSpace(key)\n\t\tvalue = strings.TrimSpace(value)\n\n\t\tif key == \"\" {\n\t\t\treturn opts, &ParseError{\n\t\t\t\tValue: value,\n\t\t\t\tErr:   errInvalidSyntax,\n\t\t\t}\n\t\t}\n\n\t\tswitch {\n\t\tcase key == \"limit\":\n\t\t\tlimit, err := strconv.Atoi(value)\n\t\t\tif err != nil {\n\t\t\t\treturn opts, &ParseError{\n\t\t\t\t\tField: key,\n\t\t\t\t\tValue: value,\n\t\t\t\t\tErr:   err,\n\t\t\t\t}\n\t\t\t}\n\t\t\tif limit < 1 || limit > 1000 {\n\t\t\t\treturn opts, &ParseError{\n\t\t\t\t\tField: key,\n\t\t\t\t\tValue: value,\n\t\t\t\t\tErr:   errLimitOutOfRange,\n\t\t\t\t}\n\t\t\t}\n\t\t\topts.Limit = &limit\n\n\t\tcase strings.HasPrefix(key, \"label.\"):\n\t\t\tname := strings.TrimPrefix(key, \"label.\")\n\t\t\tif name == \"\" {\n\t\t\t\treturn opts, &ParseError{\n\t\t\t\t\tField: key,\n\t\t\t\t\tValue: value,\n\t\t\t\t\tErr:   errInvalidSyntax,\n\t\t\t\t}\n\t\t\t}\n\t\t\topts.Labels[name] = value\n\n\t\tdefault:\n\t\t\treturn opts, &ParseError{\n\t\t\t\tField: key,\n\t\t\t\tValue: value,\n\t\t\t\tErr:   errUnknownField,\n\t\t\t}\n\t\t}\n\t}\n\n\treturn opts, nil\n}\n\nfunc defaultOptions() Options {\n\tlimit := 100\n\treturn Options{\n\t\tLimit:  &limit,\n\t\tLabels: make(map[string]string),\n\t}\n}"
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 319,
+    "completion_tokens": 7977,
+    "total_tokens": 8296,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "orchestration_input_tokens": 0,
+      "orchestration_input_cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "orchestration_output_tokens": 0
+    }
+  }
+}
